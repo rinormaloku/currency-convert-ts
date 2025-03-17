@@ -69,7 +69,7 @@ async function convertCurrencyExecutor({
     }
 
     // Fetch the latest exchange rates from the API
-    const response = await axios.get<ExchangeRateResponse>(
+    let response = await axios.get<ExchangeRateResponse>(
       `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
     );
 
@@ -88,36 +88,14 @@ async function convertCurrencyExecutor({
     // Get the exchange rate for the target currency
     const rate = exchangeRateData.rates[toCurrency];
 
-    // If you want to publish progress updates
-    if (publishToClient) {
-      publishToClient({
-        type: 'progress',
-        data: {
-          message: `Converting ${amount} ${fromCurrency} to ${toCurrency}...`,
-          progress: 75
-        }
-      });
-    }
-
     // Calculate the converted amount
     const convertedAmount = amount * rate;
 
     // Format the result to 2 decimal places
     const formattedAmount = parseFloat(convertedAmount.toFixed(2));
 
-    // Complete the task
-    if (publishToClient) {
-      publishToClient({
-        type: 'progress',
-        data: {
-          message: `Conversion complete!`,
-          progress: 100
-        }
-      });
-    }
-
     // Return the result as a JSON string
-    const response: SuccessResponse = {
+    const responseJs: SuccessResponse = {
       data: {
         amount: formattedAmount,
         fromCurrency,
@@ -132,7 +110,7 @@ async function convertCurrencyExecutor({
       }
     };
 
-    return JSON.stringify(response);
+    return JSON.stringify(responseJs);
   } catch (error) {
     console.error('Currency conversion error:', error);
 
