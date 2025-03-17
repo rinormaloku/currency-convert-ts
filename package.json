@@ -1,0 +1,35 @@
+{
+  "name": "currency-converter-ts",
+  "version": "1.0.0",
+  "description": "A currency conversion ts tool for Agent Framework",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "prepare": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rinormaloku/currency-converter-ts.git"
+  },
+  "keywords": [
+    "agent-framework",
+    "tool",
+    "currency",
+    "converter"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rinormaloku/currency-converter-ts/issues"
+  },
+  "homepage": "https://github.com/rinormaloku/currency-converter-ts#readme",
+  "dependencies": {
+    "axios": "^1.8.3"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  }
+}
