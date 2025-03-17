@@ -1,5 +1,5 @@
 {
-  "name": "currency-converter-ts",
+  "name": "converter-currency-ts",
   "version": "1.0.0",
   "description": "A currency conversion ts tool for Agent Framework",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rinormaloku/currency-converter-ts.git"
+    "url": "git+https://github.com/rinormaloku/converter-currency-ts.git"
   },
   "keywords": [
     "agent-framework",
@@ -22,9 +22,9 @@
   "author": "Your Name",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rinormaloku/currency-converter-ts/issues"
+    "url": "https://github.com/rinormaloku/converter-currency-ts/issues"
   },
-  "homepage": "https://github.com/rinormaloku/currency-converter-ts#readme",
+  "homepage": "https://github.com/rinormaloku/converter-currency-ts#readme",
   "dependencies": {
     "axios": "^1.8.3"
   },
